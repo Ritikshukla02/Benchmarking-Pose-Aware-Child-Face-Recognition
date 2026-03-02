@@ -4,7 +4,7 @@ This section explains the complete processing flow from raw image to final ident
 
 ---
 
-##  1 Face Detection
+## 1.Face Detection
 
 Faces are detected using DSFD (Dual Shot Face Detector).  
 Only the detected face region is retained for further processing.
