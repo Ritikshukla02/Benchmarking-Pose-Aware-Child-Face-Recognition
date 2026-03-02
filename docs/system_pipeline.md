@@ -11,7 +11,7 @@ Only the detected face region is retained for further processing.
 
 ---
 
-##2.Face Cropping
+## 2.Face Cropping
 
 The detected face bounding box is used to crop the face from the original image.
 
@@ -19,7 +19,7 @@ This removes background noise and irrelevant features.
 
 ---
 
-##3.Image Resizing
+## 3.Image Resizing
 
 All cropped faces are resized to **256×256 resolution** to maintain consistency across models.
 
@@ -27,7 +27,7 @@ Higher resolution improved performance for certain architectures.
 
 ---
 
-##4.Data Augmentation
+## 4.Data Augmentation
 
 Each pose image is augmented to increase robustness:
 
@@ -45,7 +45,7 @@ Poses: Front, Left, Right
 
 ---
 
-##5.Embedding Extraction
+## 5.Embedding Extraction
 
 Each model generates a numerical representation (embedding) of the face.
 
@@ -53,7 +53,7 @@ These embeddings represent unique facial characteristics in vector space.
 
 ---
 
-##6.L2 Normalization
+## 6.L2 Normalization
 
 All embeddings are normalized to unit length.
 
@@ -61,7 +61,7 @@ This ensures cosine similarity comparisons are stable and consistent.
 
 ---
 
-##7.Outlier Removal
+## 7.Outlier Removal
 
 To improve embedding reliability:
 
@@ -73,7 +73,7 @@ This reduces noise in the reference set.
 
 ---
 
-##8.Reference Embedding Creation
+## 8.Reference Embedding Creation
 
 Instead of merging all embeddings, they are grouped by pose:
 
@@ -85,7 +85,7 @@ Each pose has its own reference representation.
 
 ---
 
-##10.Final Matching
+## 9.Final Matching
 
 Test image → Pose identified → Compared only with matching pose embeddings → Cosine similarity computed → Highest score selected.
 
