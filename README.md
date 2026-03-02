@@ -1,7 +1,7 @@
 # Benchmarking Pose-Aware Child Face Recognition
 Pose-aware child face recognition pipeline (Under Publication at ICICIC 2025)
 
-🏆 Best Accuracy Achieved: 97.53% (FaceNet512)
+**Best Accuracy Achieved: 97.53%(FaceNet512)**
 
 ## Why This Project Matters
 Recognizing children's faces is significantly harder than recognizing adults.
@@ -17,21 +17,15 @@ When applied to children, their performance often drops due to poor generalizati
 
 This project focuses on building a structured and reliable pipeline specifically designed for child face identification.
 
-## Dataset: TriPose-Kids
-To conduct this study, we created a structured dataset called **TriPose-Kids**.
+## Core Idea
+Instead of comparing every test image with all stored embeddings, this system:
 
-- 27 kindergarten students (15 boys, 12 girls)
-- 3 facial poses per child:
-  - Front
-  - Left
-  - Right
-- Each pose augmented up to ~100 variations
-- Total dataset size: ~8100 images
-- All images resized to 256 × 256
+- Stores embeddings separately for each pose (Front, Left, Right)
+- Matches test images only with embeddings of the same pose
+- Removes noisy embeddings using cosine similarity filtering
+- Applies L2 normalization for stable comparison
 
-### Dataset Structure
-
-![Dataset Structure](images/dataset_structure.png)
+This reduces pose mismatch errors and improves classification stability.
 
 ---
 
@@ -81,17 +75,6 @@ This pose-aware strategy reduces mismatches caused by pose differences.
 Example:
 If a test image is left-facing, it is compared only with stored left-facing embeddings.
                    
-![Pose Specific Matching Example](images/pose_matching_example.png)
----
-
-## Results
-
-FaceNet512 performed best due to strong generalization and compatibility with high-resolution inputs.
-
-### Model Comparison Visualization
-
-![Results Comparison](images/results_comparison.png)
-
 ---
 
 ## Key Technical Contributions
@@ -104,22 +87,16 @@ FaceNet512 performed best due to strong generalization and compatibility with hi
 
 ---
 
-## Limitations
-
-- Pose labeling relies on structured filenames
-- Dataset size is limited (27 children)
-- Controlled environment testing
-
----
-
-## Future Improvements
-
-- Automatic pose estimation instead of filename-based labeling
-- Larger and more diverse datasets
-- Deployment in real-world CCTV environments
-
+## Detailed Documentation
+- [dataset_description](docs/dataset_description.md)
+- [System Pipeline](docs/system_pipeline.md)
+- [Model Benchmarking & Results](docs/model_benchmarking.md)
+- [Pose-Specific Matching Strategy](docs/pose_matching_strategy.md)
+- [limitations_and_future_work](docs/limitations_and_future_work.md)
+  
 ---
 
 ## 🔐 Dataset Availability
 
 Due to privacy and ethical considerations involving children, the TriPose-Kids dataset is not publicly available.
+Sample structure is shown in the documentation.
