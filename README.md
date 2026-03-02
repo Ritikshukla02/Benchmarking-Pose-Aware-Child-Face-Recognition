@@ -60,23 +60,6 @@ All models were accessed using the DeepFace framework to ensure consistent embed
 
 ---
 
-## What Makes This Approach Different?
-Most systems average all embeddings across poses.
-
-This system instead:
-
-✔ Stores separate embeddings for front, left, and right poses  
-✔ Compares test images only with embeddings of the same pose  
-✔ Removes noisy embeddings using cosine similarity filtering  
-✔ Applies L2 normalization for stable similarity comparison  
-
-This pose-aware strategy reduces mismatches caused by pose differences.
-
-Example:
-If a test image is left-facing, it is compared only with stored left-facing embeddings.
-                   
----
-
 ## Key Technical Contributions
 
 - Designed a pose-specific embedding pipeline
