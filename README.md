@@ -1,6 +1,5 @@
 # Benchmarking Pose-Aware Child Face Recognition
-Pose-aware child face recognition pipeline  
-Accepted at ICICIC 2025  
+Pose-aware child face recognition pipeline (Under Publication at ICICIC 2025)
 
 🏆 Best Accuracy Achieved: 97.53% (FaceNet512)
 
@@ -81,17 +80,11 @@ This pose-aware strategy reduces mismatches caused by pose differences.
 
 Example:
 If a test image is left-facing, it is compared only with stored left-facing embeddings.
+                   
 ![Pose Specific Matching Example](images/pose_matching_example.png)
 ---
 
 ## Results
-
-| Model       | Accuracy |
-|------------|----------|
-| FaceNet512 | 97.53%   |
-| Dlib       | 96.30%   |
-| VGG-Face   | 96.30%   |
-| ArcFace    | 91.36%   |
 
 FaceNet512 performed best due to strong generalization and compatibility with high-resolution inputs.
 
