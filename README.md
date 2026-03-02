@@ -81,7 +81,7 @@ This pose-aware strategy reduces mismatches caused by pose differences.
 
 Example:
 If a test image is left-facing, it is compared only with stored left-facing embeddings.
-
+![Pose Specific Matching Example](images/pose_matching_example.png)
 ---
 
 ## Results
